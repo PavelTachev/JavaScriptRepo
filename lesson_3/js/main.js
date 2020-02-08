@@ -120,6 +120,38 @@ $(document).ready(function() {
 	/* END Section 7 */
 
 	/* Section 8 */
-    
+    const square        = $('#div-8 #square');
+    let   degrees       = 0;
+    let   rotation_side = 'right';
+    square.css('transform', `rotate(${degrees}deg)`);
+    const rotate_interval = setInterval(function() {
+        square.css('transform', `rotate(${degrees}deg)`);
+        switch (rotation_side) {
+            case 'right':
+                degrees++;
+                break;
+            case 'left':
+                degrees--;
+                break;
+            default:
+                break;
+        }
+    }, 1);    
+    let   party = '';
+    setInterval(function(){
+        party = "rgb(" +
+            Math.floor(Math.random() * 255) + "," +
+            Math.floor(Math.random() * 255) + "," +
+            Math.floor(Math.random() * 255) + ")";
+            square.css({
+            'backgroundColor': party });
+    }, 500);
+    $('#div-8 #swap-direction').click(function() {
+        if(rotation_side === 'right') {
+            rotation_side = 'left';
+        }
+        else
+            rotation_side = 'right';
+    });
 	/* END Section 8 */
 });
