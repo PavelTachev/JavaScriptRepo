@@ -1,0 +1,3 @@
+За шаха кралицата е топ + офицер = 
+
+select_piece_q(data) = select_piece_t(data).concat(select_piece_o(data));
